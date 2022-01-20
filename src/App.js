@@ -18,7 +18,7 @@ const App = () => {
     { id: "8", name: "Hammersmith", zone: "4" },
   ];
   return (
-    <div class="app">
+    <div className="app">
       <p>Select Journey</p>
       <div className="app-start-journey">
         <RouteSelector
@@ -26,15 +26,18 @@ const App = () => {
           route={StartRoute}
           enableEndjourney={enableEndjourney}
           setEnableEndjourney={setEnableEndjourney}
+          setStartStation={setStartStation}
         />
       </div>
-      <p>{`state :${enableEndjourney}`}</p>
+      {startStation && (
+        <p>{`state : ${enableEndjourney} Start station : ${startStation}`}</p>
+      )}
       <div className="app-end-journey">
         <RouteSelector
           routeType={"end"}
           route={EndRoute}
           startStation={startStation}
-          setStartStation={setStartStation}
+          filterStation={startStation}
         />
       </div>
     </div>

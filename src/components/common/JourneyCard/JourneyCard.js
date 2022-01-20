@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { Card, CardBody, CardTitle } from "reactstrap";
 import "./journeycard.scss";
 const JourneyCard = (props) => {
@@ -6,10 +7,20 @@ const JourneyCard = (props) => {
     stationName,
     routeType,
     setEnableEndjourney,
-    enableEndjourney,
+    setStartStation,
+    filterStation,
   } = props;
+
+  const [endStation, setendStation] = useState("");
+
+  useEffect(() => {
+    return () => {
+      setendStation(filterStation);
+    };
+  }, []);
   const handleClick = (stationName) => {
     setEnableEndjourney(true);
+    setStartStation(stationName);
     console.log(`${stationName}`);
   };
   return (

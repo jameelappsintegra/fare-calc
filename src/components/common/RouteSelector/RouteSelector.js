@@ -1,18 +1,24 @@
 import JourneyCard from "../JourneyCard/JourneyCard";
 
 const RouteSelector = (props) => {
-  const { route, routeType, enableEndjourney, setEnableEndjourney } = props;
+  const {
+    route,
+    routeType,
+    setEnableEndjourney,
+    setStartStation,
+    filterStation,
+  } = props;
   return (
     <>
-      {route &&
-        // routeType === "start" &&
+      {route.length &&
         route.map((item) => (
           <JourneyCard
             index={item.id}
             routeType={routeType}
             stationName={item.name}
             setEnableEndjourney={setEnableEndjourney}
-            enableEndjourney={enableEndjourney}
+            setStartStation={setStartStation}
+            filterStation={filterStation}
           />
         ))}
     </>
