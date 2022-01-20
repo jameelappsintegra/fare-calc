@@ -1,0 +1,18 @@
+.app {
+  height: 100%;
+  padding: 2rem;
+  &-start-journey {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin: 3rem 0;
+  }
+  &-end-journey {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin: 3rem 0;
+  }
+}
