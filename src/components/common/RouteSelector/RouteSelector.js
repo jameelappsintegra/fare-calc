@@ -7,15 +7,19 @@ const RouteSelector = (props) => {
     setEnableEndjourney,
     setStartStation,
     filterStation,
+    handleStartClick,
+    handleEndClick,
   } = props;
   return (
     <>
       {route.length &&
-        route.map((item) => (
+        route.map((item, index) => (
           <JourneyCard
-            index={item.id}
+            key={index}
             routeType={routeType}
             stationName={item.name}
+            handleStartClick={handleStartClick}
+            handleEndClick={handleEndClick}
             setEnableEndjourney={setEnableEndjourney}
             setStartStation={setStartStation}
             filterStation={filterStation}
